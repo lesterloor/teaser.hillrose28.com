@@ -1,0 +1,73 @@
+@import "../variables";
+
+#nav-wrapper {
+	position: fixed;
+	width: 100%;
+	max-width: 1920px;
+	height: 100px;
+	background: $darkGrey;
+	padding: 15px;
+	z-index: 306;
+
+	@include responsive {
+		padding: 15px;
+	}
+	@include mobile {
+		height: 75px;
+		padding: 10px;
+	}
+
+	// LOGO CONTAINER //
+	#logo-container {
+		opacity: 1;
+		float: right;
+		img {
+			width: 225px;
+		}
+		@include mobile {
+			top: 15px;
+			right: 15px;
+			img {
+				width: 150px;
+			}
+		}
+		@include tablet {
+			top: 0px;
+			right: 15px;
+			img {
+				width: 225px;
+			}
+		}
+		.logo-text {
+			line-height: 1;
+			font-family: futura-pt, sans-serif;
+			font-weight: 300;
+			font-size: 45px;
+			color: $grey;
+			text-align: right;
+			font-style: normal;
+			color: $red !important;
+			p {
+				margin-bottom: -10px !important;
+				color: white;
+				.buildingNumber {
+					margin-right: -5px !important;
+					color: $red !important;
+				}
+				span {
+					color: $red !important;
+				}
+
+				@include mobile {
+					margin-bottom: -22px !important;
+					font-size: 30px;
+				}
+			}
+		}
+	}
+	.logo-container-black {
+		p {
+			color: $grey !important;
+		}
+	}
+}

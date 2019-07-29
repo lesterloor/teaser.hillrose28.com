@@ -1,0 +1,2 @@
+export const TEST_ACTION = "TEST_ACTION"
+export const SET_TEST_ACTION = "SET_TEST_ACTION"

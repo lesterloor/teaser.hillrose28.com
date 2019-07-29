@@ -1,0 +1,172 @@
+@import "variables";
+.contact-container {
+	background: $white;
+	margin-top: 100px;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	@include mobile {
+		margin-top: 20px;
+	}
+}
+.form-row-container {
+	height: 100%;
+	padding: 0 0 50px 0;
+}
+.form-col {
+	// top: 100px !important;
+}
+.contact-form-container {
+	padding: 00px 40px 0px;
+	background: $white;
+	width: 40%;
+	float: right;
+
+	.ant-form {
+		top: 100px;
+		padding-top: 1.5em;
+		font-size: 10px !important;
+	}
+	.ant-form-item {
+		font-size: 10px !important;
+		margin-bottom: 0px !important;
+	}
+	.ant-form-item-control {
+		margin: 5px 0 !important;
+	}
+	.ant-radio-group {
+		font-size: 10px !important;
+	}
+	h3 {
+		color: $grey;
+		text-align: right;
+		font-size: 5em;
+		margin-bottom: 0px;
+		line-height: 1;
+		font-weight: 300;
+		@include mobile {
+			font-size: 3em;
+		}
+	}
+	h3 span {
+		color: #f95c4f;
+		font-family: futura-pt, sans-serif;
+		font-weight: 300;
+	}
+
+	p {
+		font-family: neuzeit-grotesk, sans-serif;
+		color: $grey;
+		font-size: 1.8em;
+		line-height: 1;
+		font-weight: 300;
+		text-align: right;
+		margin-bottom: 0em;
+		margin-top: 5px;
+		@include mobile {
+			font-size: 1.4em !important;
+		}
+	}
+	.input-label {
+		font-size: 1.8em;
+	}
+	.contact-form-item {
+		width: 100%;
+		margin-bottom: 0px !important;
+	}
+	.first-name {
+		width: 45% !important;
+		padding-right: 10px;
+	}
+	.last-name {
+		width: 55% !important;
+	}
+	.ant-radio-wrapper {
+		margin-right: 0px;
+	}
+	.ant-radio-wrapper:hover .ant-radio,
+	.ant-radio:hover .ant-radio-inner,
+	.ant-radio-input:focus + .ant-radio-inner {
+		border-color: $red !important;
+	}
+	.broker {
+		margin-top: 10px;
+	}
+	.broker .ant-radio-group {
+		float: right;
+		font-family: neuzeit-grotesk, sans-serif;
+		color: $grey;
+		font-weight: 300;
+		.ant-radio-inner {
+			background: $white;
+		}
+	}
+	.ant-radio-checked .ant-radio-inner {
+		border-color: $red;
+	}
+	.ant-radio-inner::after {
+		background: $red;
+	}
+	.broker-text {
+		margin-right: 10px;
+		font-size: 1.8em;
+	}
+	.input-row .ant-input {
+		border-radius: 0px;
+		background: $white;
+		border: 0px solid #707070ad;
+		border-bottom: 1px solid #707070ad;
+		@include mobile {
+			font-size: 1.6em !important;
+		}
+	}
+
+	.input-row .ant-input:hover {
+		border: 0px solid #d9d9d9;
+		border-bottom: 1px solid #707070ad;
+		border-right: 3px solid #707070ad;
+	}
+	.ant-form-explain {
+		margin-top: -20px !important;
+	}
+	.submit-btn {
+		margin: 20px 0;
+		height: 49px;
+		line-height: 49px;
+		width: 100px;
+		float: right;
+		color: $darkGrey;
+		background: $white;
+		border: 1px solid $darkGrey !important;
+		border-radius: 0px;
+		font-size: 1.8em;
+		@include mobile {
+			font-size: 1.4em !important;
+		}
+	}
+	.submit-btn:hover,
+	.submit-btn:focus {
+		background: $red !important;
+		border-color: $red !important;
+	}
+	.terms {
+		font-size: 1.5em;
+		@include mobile {
+			font-size: 1.2em !important;
+		}
+	}
+	@include tablet {
+		padding: 70px 50px 0px 0px;
+		width: 100%;
+	}
+	@include mobile {
+		padding: 15px 20px 0px 0px;
+		width: 100%;
+		p {
+			font-size: 0.8rem;
+		}
+	}
+}
