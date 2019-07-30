@@ -20,30 +20,30 @@
 	// top: 100px !important;
 }
 .contact-form-container {
-	padding: 00px 40px 0px;
-	background: $white;
-	width: 40%;
+	padding: 2em;
+	position: fixed;
+	background: #f4f4f4;
+
 	float: right;
+	bottom: 0;
+	right: 0;
 
 	.ant-form {
 		top: 100px;
 		padding-top: 1.5em;
-		font-size: 10px !important;
 	}
 	.ant-form-item {
-		font-size: 10px !important;
 		margin-bottom: 0px !important;
 	}
 	.ant-form-item-control {
-		margin: 5px 0 !important;
+		margin: 0px 0 !important;
 	}
 	.ant-radio-group {
-		font-size: 10px !important;
 	}
 	h3 {
 		color: $grey;
 		text-align: right;
-		font-size: 5em;
+		font-size: 2.85em;
 		margin-bottom: 0px;
 		line-height: 1;
 		font-weight: 300;
@@ -60,32 +60,42 @@
 	p {
 		font-family: neuzeit-grotesk, sans-serif;
 		color: $grey;
-		font-size: 1.8em;
-		line-height: 1;
+		font-size: 1em;
+		line-height: 1.2;
 		font-weight: 300;
 		text-align: right;
 		margin-bottom: 0em;
-		margin-top: 5px;
+		margin-top: 0.1em;
 		@include mobile {
-			font-size: 1.4em !important;
+			font-size: 1em !important;
 		}
 	}
 	.input-label {
-		font-size: 1.8em;
+		font-size: 1em;
 	}
 	.contact-form-item {
 		width: 100%;
 		margin-bottom: 0px !important;
 	}
 	.first-name {
-		width: 45% !important;
-		padding-right: 10px;
+		font-size: 1em !important;
+
+		width: 50% !important;
+		padding-right: 2%;
 	}
 	.last-name {
-		width: 55% !important;
+		font-size: 1em !important;
+
+		width: 50% !important;
+		padding-left: 2%;
 	}
 	.ant-radio-wrapper {
 		margin-right: 0px;
+		font-size: 1em;
+		span {
+			color: $grey;
+			font-size: 1em;
+		}
 	}
 	.ant-radio-wrapper:hover .ant-radio,
 	.ant-radio:hover .ant-radio-inner,
@@ -112,7 +122,7 @@
 	}
 	.broker-text {
 		margin-right: 10px;
-		font-size: 1.8em;
+		font-size: 1em;
 	}
 	.input-row .ant-input {
 		border-radius: 0px;
@@ -120,7 +130,7 @@
 		border: 0px solid #707070ad;
 		border-bottom: 1px solid #707070ad;
 		@include mobile {
-			font-size: 1.6em !important;
+			font-size: 1em !important;
 		}
 	}
 
@@ -134,17 +144,17 @@
 	}
 	.submit-btn {
 		margin: 20px 0;
-		height: 49px;
-		line-height: 49px;
-		width: 100px;
+		height: 3em;
+		line-height: 1em;
+		width: 5.5em;
 		float: right;
 		color: $darkGrey;
 		background: $white;
 		border: 1px solid $darkGrey !important;
 		border-radius: 0px;
-		font-size: 1.8em;
+		font-size: 1em;
 		@include mobile {
-			font-size: 1.4em !important;
+			font-size: 1em !important;
 		}
 	}
 	.submit-btn:hover,
@@ -153,7 +163,7 @@
 		border-color: $red !important;
 	}
 	.terms {
-		font-size: 1.5em;
+		font-size: 0.7em;
 		@include mobile {
 			font-size: 1.2em !important;
 		}

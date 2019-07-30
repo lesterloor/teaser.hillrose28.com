@@ -4,7 +4,14 @@
 	width: 100%;
 	max-width: 1920px;
 	background: $white;
-
+	.hidemobile {
+		@include mobile {
+			display: none;
+		}
+		@include tablet {
+			display: none;
+		}
+	}
 	.header-text {
 		position: fixed;
 		width: 100%;
@@ -12,15 +19,15 @@
 		text-align: right;
 		color: white;
 		/* left: 10%; */
-		right: 2.5%;
+		padding: 2em;
 		z-index: 303;
 		h1 {
 			margin-bottom: 0 !important;
-			line-height: 40px !important;
+			line-height: 0.9 !important;
 			color: white;
 			font-family: futura-pt, sans-serif;
 			font-weight: 300;
-			font-size: 4em;
+			font-size: 2.85em;
 		}
 		@include mobile {
 			display: none;
@@ -30,6 +37,7 @@
 			}
 		}
 		@include tablet {
+			display: none;
 			top: 15%;
 			h1 {
 				font-size: 3em;
@@ -39,7 +47,7 @@
 	.building-row {
 		background: $white;
 		z-index: 303;
-		padding-top: 100px;
+		// padding-top: 100px;
 		height: 100%;
 		@include mobile {
 			padding-top: 75px;

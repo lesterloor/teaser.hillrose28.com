@@ -5,10 +5,18 @@
 	width: 100%;
 	max-width: 1920px;
 	height: 100px;
-	background: $darkGrey;
-	padding: 15px;
+	background: #fff00000;
+	padding: 2em;
 	z-index: 306;
-
+	.logo-svg {
+		width: 14em !important;
+	}
+	.logo-red {
+		fill: $red !important;
+	}
+	.logo-white {
+		fill: white !important;
+	}
 	@include responsive {
 		padding: 15px;
 	}
@@ -21,9 +29,7 @@
 	#logo-container {
 		opacity: 1;
 		float: right;
-		img {
-			width: 225px;
-		}
+
 		@include mobile {
 			top: 15px;
 			right: 15px;
@@ -42,7 +48,6 @@
 			line-height: 1;
 			font-family: futura-pt, sans-serif;
 			font-weight: 300;
-			font-size: 45px;
 			color: $grey;
 			text-align: right;
 			font-style: normal;

@@ -35,17 +35,20 @@ class HomePage extends Component {
     componentDidMount = () => {
 
         $(window).resize(() => {
-            const secondImageHeight = $(".second-Image").height()
+            const buildingImageHeight = $(".buildingImageHeight").height()
+            const contactContainer = $(".contactContainer").height()
             this.setState({
-                secondImageHeight,
+                buildingImageHeight,
+                contactContainer,
             })
         });
         $("#nav-wrapper").removeClass("white-nav")
-        var frameNumber = 0, // start video at frame 0
+        var frameNumber = 1,
+            // start video at frame 0
             // lower numbers = faster playback
-            playSpeed = isMobile ? 15 : isTablet ? 20 : 100,
+            playSpeed = isMobile ? 15 : isTablet ? 100 : 100,
             imageRange = 1,
-            totalImages = 30,
+            totalImages = 31,
             imgSeq = document.querySelector('.img-seq'),
             i,
             images = [],
@@ -125,7 +128,7 @@ class HomePage extends Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         const { buildingImageHeight, contactContainer } = this.state
-        const pageHeight = buildingImageHeight + contactContainer
+        const pageHeight = buildingImageHeight + (contactContainer * .72)
         return (
             <React.Fragment>
                 <div className="home-page" style={{ height: pageHeight }}>
@@ -139,11 +142,11 @@ class HomePage extends Component {
                                 <div id="video-holder" className="video-holder">
                                     <img className="img-seq buildingImageHeight" style={{ width: "100%" }} src={`${Images[0]}`} alt="" />
                                 </div>
-                                <div className="header-text">
+                                <div className="header-text hidemobile">
                                     < Plx
                                         parallaxData={[{
                                             start: 0,
-                                            duration: 800,
+                                            duration: 400,
                                             properties: [{
                                                 startValue: 1,
                                                 endValue: 0,
@@ -166,6 +169,12 @@ class HomePage extends Component {
                                         <Row type="flex" align="bottom" justify="end" className="form-row-container">
                                             <Col className="form-col">
                                                 <div className="contact-form-container" >
+                                                    <div className="header-text contact-form-header">
+
+                                                        <h1>THE PLACE TO LIVE </h1>
+                                                        <h1>WHEN YOU'RE GOING PLACES</h1>
+                                                    </div>
+
                                                     <h3>
                                                         <span className="contact-header-text">COMING SOON</span>
                                                         <br />
