@@ -1,54 +1,100 @@
 @import "~antd/dist/antd.css";
+@import "../styles/variables.scss";
 body,
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-@media screen and (max-width: 1366px) and (min-width: 1200px) {
+@include desktopSmall {
 	body,
 	html {
-		font-size: 12px;
-	}
-	.ant-form,
-	.ant-radio-group {
-		font-family: neuzeit-grotesk, sans-serif !important;
 		font-size: 12px !important;
 	}
-	.contact-form-container {
-		font-size: 12px !important;
-		width: 40%;
-	}
 }
-
-@media screen and (max-width: 1600px) and (min-width: 1367px) {
+@include desktopMedium {
 	body,
 	html {
-		font-size: 14px;
-	}
-	.ant-form,
-	.ant-radio-group {
-		font-family: neuzeit-grotesk, sans-serif !important;
 		font-size: 14px !important;
-	}
-	.contact-form-container {
-		font-size: 14px !important;
-		width: 35%;
 	}
 }
-
-@media screen and (min-width: 1601px) {
+@include desktop {
 	body,
 	html {
 		font-size: 16px !important;
 	}
-	.ant-form,
-	.ant-radio-group {
-		font-family: neuzeit-grotesk, sans-serif !important;
-		font-size: 16px !important;
-	}
-	.contact-form-container {
-		font-size: 16px !important;
-		width: 30%;
-	}
 }
+
+// @media screen and (max-width: 1366px) and (min-width: 1200px) {
+// 	body,
+// 	html {
+// 		font-size: 12px;
+// 	}
+// 	.ant-input .ant-form-item {
+// 		font-size: 12px !important;
+// 	}
+// 	.ant-form {
+// 		font-family: neuzeit-grotesk, sans-serif !important;
+// 		font-size: 12px !important;
+// 	}
+// 	.ant-radio-group {
+// 		font-family: neuzeit-grotesk, sans-serif !important;
+// 		font-size: 12px !important;
+// 	}
+// 	.contact-form-container {
+// 		font-size: 12px !important;
+// 		width: 40%;
+// 	}
+// 	.terms {
+// 		font-size: 12px !important;
+// 	}
+// }
+
+// @media screen and (max-width: 1600px) and (min-width: 1367px) {
+// 	body,
+// 	html {
+// 		font-size: 14px;
+// 	}
+// 	.ant-input .ant-form-item {
+// 		font-size: 14px !important;
+// 	}
+// 	.ant-form {
+// 		font-family: neuzeit-grotesk, sans-serif !important;
+// 		font-size: 14px !important;
+// 	}
+// 	.ant-radio-group {
+// 		font-family: neuzeit-grotesk, sans-serif !important;
+// 		font-size: 14px !important;
+// 	}
+// 	.contact-form-container {
+// 		font-size: 14px !important;
+// 		width: 35%;
+// 	}
+// 	.terms {
+// 		font-size: 14px !important;
+// 	}
+// }
+
+// @media screen and (min-width: 1601px) {
+// 	body,
+// 	.ant-input .ant-form-item {
+// 		font-size: 16px !important;
+// 	}
+// 	html {
+// 		font-size: 16px !important;
+// 	}
+// 	.ant-form {
+// 		font-family: neuzeit-grotesk, sans-serif !important;
+// 		font-size: 16px !important;
+// 	}
+// 	.ant-radio-group {
+// 		font-family: neuzeit-grotesk, sans-serif !important;
+// 		font-size: 16px !important;
+// 	}
+// 	.contact-form-container {
+// 		font-size: 16px !important;
+// 		width: 30%;
+// 	}
+// 	.terms {
+// 		font-size: 16px !important;
+// 	}
+// }

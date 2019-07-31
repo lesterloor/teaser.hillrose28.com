@@ -3,14 +3,16 @@
 	position: relative;
 	width: 100%;
 	max-width: 1920px;
+	height: 100vh;
+
 	background: $white;
 	.hidemobile {
-		@include mobile {
+		@include responsive {
 			display: none;
 		}
-		@include tablet {
-			display: none;
-		}
+	}
+	.hidedesktop {
+		display: none;
 	}
 	.header-text {
 		position: fixed;
@@ -50,7 +52,7 @@
 		// padding-top: 100px;
 		height: 100%;
 		@include mobile {
-			padding-top: 75px;
+			// padding-top: 75px;
 		}
 	}
 	.mainContent {

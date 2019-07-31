@@ -8,9 +8,6 @@
 	width: 100%;
 	max-width: 1920px;
 	margin: 0 auto;
-	@include mobile {
-		margin-top: 20px;
-	}
 }
 .form-row-container {
 	height: 100%;
@@ -23,11 +20,10 @@
 	padding: 2em;
 	position: fixed;
 	background: #f4f4f4;
-
 	float: right;
 	bottom: 0;
 	right: 0;
-
+	height: 72vh;
 	.ant-form {
 		top: 100px;
 		padding-top: 1.5em;
@@ -38,8 +34,7 @@
 	.ant-form-item-control {
 		margin: 0px 0 !important;
 	}
-	.ant-radio-group {
-	}
+
 	h3 {
 		color: $grey;
 		text-align: right;
@@ -47,9 +42,6 @@
 		margin-bottom: 0px;
 		line-height: 1;
 		font-weight: 300;
-		@include mobile {
-			font-size: 3em;
-		}
 	}
 	h3 span {
 		color: #f95c4f;
@@ -162,21 +154,69 @@
 		background: $red !important;
 		border-color: $red !important;
 	}
-	.terms {
-		font-size: 0.7em;
-		@include mobile {
-			font-size: 1.2em !important;
-		}
-	}
+
 	@include tablet {
 		padding: 70px 50px 0px 0px;
 		width: 100%;
 	}
-	@include mobile {
-		padding: 15px 20px 0px 0px;
+}
+
+//responsive
+@include tablet {
+	.contact-form-container {
+	}
+}
+@include mobile {
+	.ant-form {
+		h3 {
+			font-size: 3em !important;
+		}
+		padding: 1em;
 		width: 100%;
 		p {
-			font-size: 0.8rem;
+			font-size: 0.6rem;
+		}
+		.terms {
+			font-size: 10px !important;
+		}
+	}
+}
+@include desktopSmall {
+	.contact-form-container {
+		width: 40%;
+		.ant-form,
+		.ant-radio-group,
+		.ant-form-item {
+			font-size: 12px !important;
+		}
+		.terms {
+			font-size: 0.7em !important;
+		}
+	}
+}
+@include desktopMedium {
+	.contact-form-container {
+		width: 35%;
+		.ant-form,
+		.ant-radio-group,
+		.ant-form-item {
+			font-size: 14px !important;
+		}
+		.terms {
+			font-size: 0.7em !important;
+		}
+	}
+}
+@include desktop {
+	.contact-form-container {
+		width: 30%;
+		.ant-form,
+		.ant-radio-group,
+		.ant-form-item {
+			font-size: 16px !important;
+		}
+		.terms {
+			font-size: 0.7em !important;
 		}
 	}
 }

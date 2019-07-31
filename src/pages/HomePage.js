@@ -43,7 +43,7 @@ class HomePage extends Component {
             })
         });
         $("#nav-wrapper").removeClass("white-nav")
-        var frameNumber = 1,
+        var frameNumber = 0,
             // start video at frame 0
             // lower numbers = faster playback
             playSpeed = isMobile ? 15 : isTablet ? 100 : 100,
@@ -71,7 +71,7 @@ class HomePage extends Component {
 
             if (i < 10) {
                 filename += '000';
-            } else if (i < 100) {
+            } else if (i < 20) {
                 filename += '00';
             } else if (i < 1000) {
                 filename += '0';
@@ -79,7 +79,6 @@ class HomePage extends Component {
 
             filename += i + '.jpg';
             img.src = Images[i];
-
             images.push(img);
             i = i + imageRange;
         }
@@ -89,7 +88,9 @@ class HomePage extends Component {
         function scrollPlay() {
 
             var frameNumber = Math.floor(window.pageYOffset / playSpeed);
-            if (frameNumber > 29) {
+            console.log("playSpeed ", playSpeed)
+            console.log("window.pageYOffset ", window.pageYOffset)
+            if (frameNumber > 28) {
 
             } else {
                 imgSeq.src = images[frameNumber < 0 ? 0 : frameNumber].src;
@@ -128,6 +129,7 @@ class HomePage extends Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         const { buildingImageHeight, contactContainer } = this.state
+        console.log("contactContainer", contactContainer)
         const pageHeight = buildingImageHeight + (contactContainer * .72)
         return (
             <React.Fragment>
@@ -169,8 +171,7 @@ class HomePage extends Component {
                                         <Row type="flex" align="bottom" justify="end" className="form-row-container">
                                             <Col className="form-col">
                                                 <div className="contact-form-container" >
-                                                    <div className="header-text contact-form-header">
-
+                                                    <div className="header-text contact-form-header hidedesktop">
                                                         <h1>THE PLACE TO LIVE </h1>
                                                         <h1>WHEN YOU'RE GOING PLACES</h1>
                                                     </div>
@@ -241,8 +242,8 @@ class HomePage extends Component {
                                                                 {getFieldDecorator('broker')(
                                                                     <Radio.Group>
                                                                         <span className="broker-text">Are you a broker?</span>
-                                                                        <Radio value="true">Yes</Radio>
-                                                                        <Radio value="false">No</Radio>
+                                                                        <Radio className="radio-option" value="true">Yes</Radio>
+                                                                        <Radio className="radio-option" value="false">No</Radio>
                                                                     </Radio.Group>,
                                                                 )}
                                                             </Form.Item>
@@ -261,9 +262,9 @@ class HomePage extends Component {
 
 
                                                         <Form.Item >
-                                                            <Button className="submit-btn" type="primary" htmlType="submit">
+                                                            <button className="submit-btn" type="primary" htmlType="submit">
                                                                 Submit
-                                                        </Button>
+                                                        </button>
 
                                                         </Form.Item>
                                                         <Form.Item>

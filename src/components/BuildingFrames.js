@@ -1,5 +1,5 @@
 
-import image0001 from "../assets/images/building_frames/01.jpg"
+// import image0001 from "../assets/images/building_frames/01.jpg"
 import image0002 from "../assets/images/building_frames/02.jpg"
 import image0003 from "../assets/images/building_frames/03.jpg"
 import image0004 from "../assets/images/building_frames/04.jpg"
@@ -30,7 +30,7 @@ import image0028 from "../assets/images/building_frames/28.jpg"
 import image0029 from "../assets/images/building_frames/29.jpg"
 import image0030 from "../assets/images/building_frames/30.jpg"
 export default [
-    image0001,
+    // image0001,
     image0002,
     image0003,
     image0004,
