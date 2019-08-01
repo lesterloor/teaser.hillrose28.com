@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.20.1",
     "axios": "^0.18.0",
+    "emailjs-com": "^2.3.2",
     "firebase": "^6.3.3",
     "jquery": "^3.4.1",
     "node-sass": "^4.12.0",

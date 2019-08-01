@@ -96,11 +96,13 @@ class HomePage extends Component {
             if (frameNumber > 28) {
                 console.log("frameNumber ", frameNumber)
 
-            } else {
+
+            }
+            else {
+                // $(".cls-2").css("fill", "#f95c4f");
+                // $(".cls-1").css("fill", "white");
                 console.log("frameNumber ", frameNumber)
 
-                $(".cls-2").css("fill", "#f95c4f");
-                $(".cls-1").css("fill", "white");
 
                 imgSeq.src = images[frameNumber < 0 ? 0 : frameNumber].src;
             }
@@ -222,7 +224,7 @@ class HomePage extends Component {
                                                         {/* AT YOUR CONVENIENCE */}
                                                     </h3>
                                                     <p>
-                                                        Register below for priority information on the Hillrose28 at <br />181 East 28th Street. A ground-up full-service luxury condominium.
+                                                        Register below for priority information for Hillrose28 at <br />181 East 28th Street. A ground-up full-service luxury condominium.
                                                 </p>
 
                                                     <Form className="contact-form" id="contact-form" onSubmit={this.handleSubmit}>
@@ -313,8 +315,7 @@ class HomePage extends Component {
 
 
                                                         </Form.Item>
-                                                        <p className="terms">This advertisement is not an offering. It is a solicitation of interest in the advertised property. No offering of the advertised units can be made and no deposits can be accepted, or reservations, binding or  non-binding, can be made until an offering plan is filed with the New York State Department of Law. This advertisement is made pursuant to Cooperative Policy Statement #1, issued by the New York State Department of Law.  File No. CP19-0038.  Sponsor: 157-161 East 28th Street LLC
-                                                         {/* c/o Coral Realty, 400 Broome Street, 11th Floor, New York, New York 10013. */}
+                                                        <p className="terms">This advertisement is not an offering. It is a solicitation of interest in the advertised property. No offering of the advertised units can be made and no deposits can be accepted, or reservations, binding or  non-binding, can be made until an offering plan is filed with the New York State Department of Law. This advertisement is made pursuant to Cooperative Policy Statement #1, issued by the New York State Department of Law.  File No. CP19-0038.  Sponsor: 157-161 East 28th Street LLC, 400 Broome Street, 11th Floor, New York, New York 10013.
                                                         </p>
                                                     </Form>
 

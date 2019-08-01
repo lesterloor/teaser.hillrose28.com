@@ -64,6 +64,7 @@
 	.input-label {
 		font-size: 1em;
 	}
+
 	.contact-form-item {
 		width: 100%;
 		margin-bottom: 0px !important;
@@ -118,20 +119,44 @@
 	.input-row .ant-input {
 		border-radius: 0px;
 		background: $white;
+		outline: none !important;
 		border: 0px solid #707070ad;
 		border-bottom: 1px solid #707070ad;
 		@include mobile {
 			font-size: 1em !important;
 		}
 	}
+	// .ant-nput, textarea, select, a { outline: none !important; }
 
 	.input-row .ant-input:hover {
 		border: 0px solid #d9d9d9;
 		border-bottom: 1px solid #707070ad;
-		border-right: 3px solid #707070ad;
+		border-right: 0x solid #707070ad;
+		outline: none !important;
+
 	}
+	input:focus, textarea {
+		outline: none !important;
+	}
+	
+	.ant-input:hover{
+		border-right: 0x solid #707070ad !important;
+		outline: none !important;
+
+
+	}
+	.ant-input:focus{
+		border-right: 0x solid #707070ad !important;
+		outline: none !important;
+
+
+	}
+
 	.ant-form-explain {
 		margin-top: -20px !important;
+	}
+	.has-error{
+		background: #f4f4f4;
 	}
 	.submit-btn {
 		margin: 20px 0;
@@ -165,6 +190,11 @@
 	.contact-form-container {
 	}
 }
+@include tablet {
+	.terms {
+		font-size: 0.7em !important;
+	}
+}
 @include mobile {
 	.ant-form {
 		h3 {
@@ -176,8 +206,12 @@
 			font-size: 0.6rem;
 		}
 		.terms {
-			font-size: 10px !important;
+			font-size: 0.7em !important;
 		}
+	}
+	.form-row-container {
+		height: 100%;
+		padding: 0 0 15px 0;
 	}
 }
 @include desktopSmall {

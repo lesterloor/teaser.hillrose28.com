@@ -5,11 +5,54 @@
 	height: 100vh;
 	margin: 0 auto;
 	background: #f1f1f1;
-
+	@include desktopSmall {
+		@media screen and (-webkit-min-device-pixel-ratio:0) { 
+			select,
+			textarea,
+			input {
+			  font-size: 12px;
+			}
+		  }
+	}
+	@include desktopMedium {
+		@media screen and (-webkit-min-device-pixel-ratio:0) { 
+			select,
+			textarea,
+			input {
+			  font-size: 14px;
+			}
+		  }
+	}
+	@include desktop {
+		@media screen and (-webkit-min-device-pixel-ratio:0) { 
+			select,
+			textarea,
+			input {
+			  font-size: 16px;
+			}
+		  }
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		select,
+		textarea,
+		input {
+		  font-size: 16px;
+		}
+	  }
 	.ant-row-flex-middle {
 		height: 80vh;
 	}
+	.ant-input-affix-wrapper,.ant-row ,.ant-form-item{
+		font-size: 16px !important;
+
+	}
+	.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled){
+		font-size: 16px !important;
+	
+	}
 	.login-form-row {
+
 		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 		background: white;
 		padding: 1rem 2rem 2rem;
