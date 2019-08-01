@@ -26,8 +26,8 @@ class HomeNavigation extends Component {
     }
     toggleLogo = () => {
         console.log("changinf")
-        $(".cls-2").addClass("logo-red");
-        $(".cls-1").addClass("logo-white");
+        // $(".cls-2").addClass("logo-red");
+        // $(".cls-1").addClass("logo-white");
 
     }
     render() {

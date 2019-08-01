@@ -18,7 +18,6 @@
 }
 .contact-form-container {
 	padding: 2em;
-	position: fixed;
 	background: #f4f4f4;
 	float: right;
 	bottom: 0;
@@ -183,7 +182,8 @@
 }
 @include desktopSmall {
 	.contact-form-container {
-		width: 40%;
+		height: 507px;
+		width: 479px;
 		.ant-form,
 		.ant-radio-group,
 		.ant-form-item {
@@ -196,7 +196,8 @@
 }
 @include desktopMedium {
 	.contact-form-container {
-		width: 35%;
+		height: 550px;
+		width: 560px;
 		.ant-form,
 		.ant-radio-group,
 		.ant-form-item {
@@ -209,7 +210,8 @@
 }
 @include desktop {
 	.contact-form-container {
-		width: 30%;
+		height: 602px;
+		width: 636px;
 		.ant-form,
 		.ant-radio-group,
 		.ant-form-item {

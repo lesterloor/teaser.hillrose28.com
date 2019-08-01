@@ -12,10 +12,10 @@
 		width: 14em !important;
 	}
 	.logo-red {
-		fill: $red !important;
+		fill: $red;
 	}
 	.logo-white {
-		fill: white !important;
+		fill: white;
 	}
 	@include responsive {
 		padding: 15px;
