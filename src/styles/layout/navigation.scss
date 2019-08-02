@@ -1,78 +1,48 @@
 @import "../variables";
-
-#nav-wrapper {
+.nav-wrapper-grey {
+	background: #606060 !important;
+}
+.cls-1 {
+	fill: #cd5b5b;
+}
+.cls-2 {
+	fill: white;
+}
+.red_logo {
+	fill: #cd5b5b !important;
+}
+.white_logo {
+	fill: white !important;
+}
+.navigation {
 	position: fixed;
 	width: 100%;
 	max-width: 1920px;
 	height: 100px;
-	background: #fff00000;
-	padding: 2em;
-	z-index: 306;
-	.logo-svg {
-		width: 14em !important;
-	}
-	.logo-red {
-		fill: $red;
-	}
-	.logo-white {
-		fill: white;
-	}
-	@include responsive {
-		padding: 15px;
-	}
 	@include mobile {
-		height: 75px;
-		padding: 10px;
+		height: 80px;
 	}
-
-	// LOGO CONTAINER //
-	#logo-container {
-		opacity: 1;
-		float: right;
-
+	z-index: 306;
+	.grey-nav {
+		background: #606060 !important;
+		height: 100px;
+		width: 100%;
+		position: fixed;
+		max-width: 1920px;
 		@include mobile {
-			top: 15px;
-			right: 15px;
-			img {
-				width: 150px;
-			}
-		}
-		@include tablet {
-			top: 0px;
-			right: 15px;
-			img {
-				width: 225px;
-			}
-		}
-		.logo-text {
-			line-height: 1;
-			font-family: futura-pt, sans-serif;
-			font-weight: 300;
-			color: $grey;
-			text-align: right;
-			font-style: normal;
-			color: $red !important;
-			p {
-				margin-bottom: -10px !important;
-				color: white;
-				.buildingNumber {
-					margin-right: -5px !important;
-					color: $red !important;
-				}
-				span {
-					color: $red !important;
-				}
-
-				@include mobile {
-					margin-bottom: -22px !important;
-					font-size: 30px;
-				}
-			}
+			height: 80px;
 		}
 	}
-	.logo-container-black {
-		p {
-			color: $grey !important;
+	.logo-svg {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 306;
+		margin: 1em 2em 0;
+		width: 14em !important;
+		@include mobile {
+			width: 10em !important;
+			margin: 1em 1em 0;
 		}
 	}
 }

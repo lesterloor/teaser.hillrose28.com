@@ -2,8 +2,9 @@
 .contact-container {
 	background: $white;
 	margin-top: 100px;
-	position: fixed;
 	top: 0;
+	left: 0;
+	right: 0;
 	height: 100vh;
 	width: 100%;
 	max-width: 1920px;
@@ -11,13 +12,20 @@
 }
 .form-row-container {
 	height: 100%;
-	padding: 0 0 50px 0;
+	@include mobile {
+		position: absolute;
+		bottom: 0;
+	}
 }
-.form-col {
-	// top: 100px !important;
+.ant-row-flex-bottom {
+	-ms-flex-align: end;
+	align-items: flex-end;
+	@include mobile {
+		align-items: flex-end !important;
+	}
 }
 .contact-form-container {
-	padding: 2em;
+	padding: 0 2em 2em;
 	background: #f4f4f4;
 	float: right;
 	bottom: 0;
@@ -26,6 +34,9 @@
 	.ant-form {
 		top: 100px;
 		padding-top: 1.5em;
+		@include responsive {
+		}
+		padding-top: 0em;
 	}
 	.ant-form-item {
 		margin-bottom: 0px !important;
@@ -41,6 +52,9 @@
 		margin-bottom: 0px;
 		line-height: 1;
 		font-weight: 300;
+		@include responsive {
+			font-size: 2em;
+		}
 	}
 	h3 span {
 		color: #f95c4f;
@@ -133,29 +147,25 @@
 		border-bottom: 1px solid #707070ad;
 		border-right: 0x solid #707070ad;
 		outline: none !important;
-
 	}
-	input:focus, textarea {
+	input:focus,
+	textarea {
 		outline: none !important;
 	}
-	
-	.ant-input:hover{
+
+	.ant-input:hover {
 		border-right: 0x solid #707070ad !important;
 		outline: none !important;
-
-
 	}
-	.ant-input:focus{
+	.ant-input:focus {
 		border-right: 0x solid #707070ad !important;
 		outline: none !important;
-
-
 	}
 
 	.ant-form-explain {
 		margin-top: -20px !important;
 	}
-	.has-error{
+	.has-error {
 		background: #f4f4f4;
 	}
 	.submit-btn {
@@ -169,6 +179,9 @@
 		border: 1px solid $darkGrey !important;
 		border-radius: 0px;
 		font-size: 1em;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
+		-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0) !important;
+		box-shadow: 0 2px 0 rgba(0, 0, 0, 0) !important;
 		@include mobile {
 			font-size: 1em !important;
 		}
@@ -179,8 +192,8 @@
 		border-color: $red !important;
 	}
 
-	@include tablet {
-		padding: 70px 50px 0px 0px;
+	@include responsive {
+		padding: 0 1em;
 		width: 100%;
 	}
 }
@@ -226,6 +239,9 @@
 		.terms {
 			font-size: 0.7em !important;
 		}
+		@include responsive {
+			width: 40%;
+		}
 	}
 }
 @include desktopMedium {
@@ -240,6 +256,9 @@
 		.terms {
 			font-size: 0.7em !important;
 		}
+		@include responsive {
+			width: 35%;
+		}
 	}
 }
 @include desktop {
@@ -253,6 +272,9 @@
 		}
 		.terms {
 			font-size: 0.7em !important;
+		}
+		@include responsive {
+			width: 30%;
 		}
 	}
 }

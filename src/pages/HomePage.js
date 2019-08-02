@@ -94,14 +94,15 @@ class HomePage extends Component {
             var frameNumber = Math.floor(window.pageYOffset / playSpeed);
 
             if (frameNumber > 28) {
-                console.log("frameNumber ", frameNumber)
-
-
+                // $("#nav-wrapper").addClass("nav-wrapper-grey")
+                $(".cls-2").addClass("red_logo");
+                $(".cls-1").addClass("white_logo");
             }
             else {
-                // $(".cls-2").css("fill", "#f95c4f");
-                // $(".cls-1").css("fill", "white");
-                console.log("frameNumber ", frameNumber)
+                // $("#nav-wrapper").removeClass("nav-wrapper-grey")
+                $(".cls-2").removeClass("red_logo");
+                $(".cls-1").removeClass("white_logo");
+
 
 
                 imgSeq.src = images[frameNumber < 0 ? 0 : frameNumber].src;
@@ -169,10 +170,18 @@ class HomePage extends Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+
+    fadeHeaderStart = () => {
+
+    }
+    fadeHeaderEnd = () => {
+        console.log("header faded")
+    }
     render() {
         const { getFieldDecorator } = this.props.form;
         const { buildingImageHeight, contactContainer, submitting } = this.state
-        const pageHeight = buildingImageHeight + (contactContainer * .72)
+        // const pageHeight = buildingImageHeight + (contactContainer * .72)
+        const pageHeight = buildingImageHeight + contactContainer
         return (
             <React.Fragment>
                 <div className="home-page" style={{ height: pageHeight }}>
@@ -188,9 +197,10 @@ class HomePage extends Component {
                                 </div>
                                 <div className="header-text hidemobile">
                                     < Plx
+                                        onPlxEnd={this.fadeHeader}
                                         parallaxData={[{
-                                            start: 0,
-                                            duration: 400,
+                                            start: 400,
+                                            end: 700,
                                             properties: [{
                                                 startValue: 1,
                                                 endValue: 0,
@@ -207,16 +217,16 @@ class HomePage extends Component {
                     </Waypoint>
                     <div className="mainContent" >
                         <Waypoint >
-                            <div className="row-section second-row" >
+                            <div  >
                                 <Row >
                                     <div onLoad={() => this.loadedImage("contactContainer")} className="contactContainer contact-container">
                                         <Row type="flex" align="bottom" justify="end" className="form-row-container">
                                             <Col className="form-col">
+                                                <div className="form-title ">
+                                                    <h1>THE PLACE TO LIVE WHEN
+                                                    <br />YOU'RE GOING PLACES</h1>
+                                                </div>
                                                 <div className="contact-form-container" >
-                                                    <div className="header-text contact-form-header hidedesktop">
-                                                        <h1>THE PLACE TO LIVE </h1>
-                                                        <h1>WHEN YOU'RE GOING PLACES</h1>
-                                                    </div>
 
                                                     <h3>
                                                         <span className="contact-header-text">COMING SOON</span>
@@ -305,8 +315,8 @@ class HomePage extends Component {
 
                                                         <Form.Item >
                                                             <Button loading={submitting} className="submit-btn" type="primary" htmlType="submit">
-                                                                Submit
-                                                        </Button>
+                                                                {submitting ? "" : "Submit"}
+                                                            </Button>
 
                                                         </Form.Item>
                                                         <Form.Item>

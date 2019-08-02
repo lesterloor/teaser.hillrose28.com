@@ -6,6 +6,8 @@ import Logo from "../assets/images/SVG/logo.svg"
 import ReactSVG from 'react-svg'
 import Plx from 'react-plx';
 import $ from 'jquery';
+import { isMobile, isTablet } from 'react-device-detect';
+
 
 // import $ from 'jquery';
 // import logo from "../assets/images//Hillrose_logo_white.png"
@@ -33,45 +35,22 @@ class HomeNavigation extends Component {
     render() {
 
         return (
-            <div id="nav-wrapper" className="white-nav">
-
-                <div className="nav-item-container">
-                    <div id="logo-container">
-                        <div className="logo-text">
-                            {/* <ReactSVG className="logo-svg" src={Logo1} /> */}
-                            < Plx
-                                onPlxEnd={() => this.toggleLogo()}
-                                parallaxData={[{
-                                    start: 0,
-                                    duration: 400,
-                                    properties: [{
-                                        startValue: 1,
-                                        endValue: 0,
-                                        property: "opacity"
-                                    }]
-                                }]} >
-                                <div />
-                            </ Plx>
-                            < Plx
-                                // onPlxEnd={() => this.toggleLogo()}
-                                parallaxData={[{
-                                    start: 600,
-                                    duration: 400,
-                                    properties: [{
-                                        startValue: 1,
-                                        endValue: 0,
-                                        property: "opacity"
-                                    }]
-                                }]} >
-                                <ReactSVG className="logo-svg" src={Logo} />
-                            </ Plx>
-
-
-                            {/* <img className="nav-logo-image" alt=" " src={Logo} /> */}
-                        </div>
-                    </div>
-                </div>
-
+            <div className="navigation">
+                < Plx
+                    style={{ opacity: 0 }}
+                    onPlxEnd={this.fadeHeader}
+                    parallaxData={[{
+                        start: isMobile ? 0 : 750,
+                        duration: 200,
+                        properties: [{
+                            startValue: 0,
+                            endValue: 1,
+                            property: "opacity"
+                        }]
+                    }]} >
+                    <div className="grey-nav"></div>
+                </ Plx>
+                <ReactSVG className="logo-svg" src={Logo} />
             </div>
         )
     }

@@ -13,6 +13,28 @@
 	}
 	.hidedesktop {
 		display: none;
+		color: #606060 !important;
+		@include responsive {
+		}
+	}
+	.form-title {
+		display: none;
+		@include responsive {
+			display: inherit;
+		}
+	}
+	.form-title {
+		padding: 1em;
+		h1 {
+			text-align: right;
+			margin-bottom: 0 !important;
+			line-height: 0.9 !important;
+			color: white;
+			font-family: futura-pt, sans-serif;
+			font-weight: 300;
+			font-size: 2em;
+			color: #606060 !important;
+		}
 	}
 	.header-text {
 		position: fixed;
@@ -32,29 +54,11 @@
 			font-weight: 300;
 			font-size: 2.85em;
 		}
-		@include mobile {
-			display: none;
-			// top: 15%;
-			h1 {
-				font-size: 2em;
-			}
-		}
-		@include tablet {
-			display: none;
-			top: 15%;
-			h1 {
-				font-size: 3em;
-			}
-		}
 	}
 	.building-row {
 		background: $white;
 		z-index: 303;
-		// padding-top: 100px;
 		height: 100%;
-		@include mobile {
-			// padding-top: 75px;
-		}
 	}
 	.mainContent {
 		top: 0px;
@@ -78,9 +82,7 @@
 			padding: 30px;
 		}
 	}
-	.secondRow {
-		padding: 30px 0px 15px !important;
-	}
+
 	.image-col-with-text {
 		width: 80%;
 		@include responsive {
@@ -115,4 +117,7 @@
 	.image-description-right {
 		text-align: right;
 	}
+}
+.ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) {
+	padding-left: 15px !important;
 }
