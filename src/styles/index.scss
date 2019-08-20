@@ -99,3 +99,23 @@ html {
 // 		font-size: 16px !important;
 // 	}
 // }
+
+.page-layout {
+    max-width: none;
+}
+
+.home-page {
+    max-width: none;
+}
+
+.navigation {
+    max-width:  none;
+
+    .grey-nav {
+        max-width: none;
+    }
+}
+
+.nobr {
+    white-space: nowrap;
+}

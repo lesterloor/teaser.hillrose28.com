@@ -18,14 +18,14 @@
 	position: fixed;
 	width: 100%;
 	max-width: 1920px;
-	height: 100px;
+	height: 8em;
 	@include mobile {
 		height: 80px;
 	}
 	z-index: 306;
 	.grey-nav {
 		background: #606060 !important;
-		height: 100px;
+		height: 8em;
 		width: 100%;
 		position: fixed;
 		max-width: 1920px;
@@ -38,7 +38,7 @@
 		right: 0;
 		top: 0;
 		z-index: 306;
-		margin: 1em 2em 0;
+		margin: 1.5em;
 		width: 14em !important;
 		@include mobile {
 			width: 10em !important;

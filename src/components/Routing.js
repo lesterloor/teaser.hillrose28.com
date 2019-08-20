@@ -16,16 +16,16 @@ class Routing extends Component {
     }
     static contextType = Context
     render() {
-        const isLoggedIn = this.props.routing.loginReducer.user ? true : false
+        /*const isLoggedIn = this.props.routing.loginReducer.user ? true : false
         if (!isLoggedIn) {
             return (
                 <Router>
                     <Route exact path="/" component={LoginPage} />
                 </Router>
             )
-        }
+        }*/
         return (
-            <Router onUpdate={() => console.log("updated")}>
+            <Router>
                 <Switch>
                     <MainAppContainer>
                         <Route exact path="/" component={HomePage} />

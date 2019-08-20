@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Waypoint } from 'react-waypoint';
 import Images from "../components/BuildingFrames"
-import { Form, Input, Radio, Button, Row, Col } from 'antd';
+import { Form, Input, Radio, Button, Row, Col, Modal } from 'antd';
 import { isMobile, isTablet } from 'react-device-detect';
 import White_logo from "../assets/images/Hillrose_logo-white.png"
 import Red_logo from "../assets/images/Hillrose_logo-red.png"
 import Corcoran from "../assets/images/corcoran-logo.png"
+import Forkosh from "../assets/images/fdg.png"
 import Plx from 'react-plx';
 import "../styles/pages/home.scss"
 import "../styles/contact.scss"
@@ -32,8 +33,11 @@ class HomePage extends Component {
             display: false,
             error: null,
             submitting: false,
-            sent: false
+            sent: false,
+            confirmationVisible: false,
         }
+
+        this.confirmationTimeout = null
     }
 
     componentDidMount = () => {
@@ -144,31 +148,41 @@ class HomePage extends Component {
     };
     finalize = () => {
         this.props.contactFormReset()
+
+        this.props.form.resetFields()
     }
+
     componentWillReceiveProps(newProps) {
         const { sent } = newProps.ContactFormState.ContactForm
+
         if (sent) {
-            setTimeout(() => {
+            this.setState({
+                submitting: false,
+                error: false,
+                sent: true,
+                confirmationVisible: true,
+            })
+
+            this.finalize()
+        }
+        else {
+            this.setState({
+                sent: false
+            })
+
+            clearTimeout(this.confirmationTimeout)
+            
+            this.confirmationTimeout = setTimeout(() => {
                 this.setState({
-                    submitting: false,
-                    error: false,
-                    sent: true
+                    confirmationVisible: false,
                 })
-            }, 2000);
-
-
-        } else {
-            setTimeout(() => {
-                this.setState({
-                    sent: false
-                })
-            }, 2000);
-
-
+            }, 2500)
         }
     }
     componentWillUnmount() {
         this._isMounted = false;
+
+        clearTimeout(this.confirmationTimeout)
     }
 
     fadeHeaderStart = () => {
@@ -179,7 +193,7 @@ class HomePage extends Component {
     }
     render() {
         const { getFieldDecorator } = this.props.form;
-        const { buildingImageHeight, contactContainer, submitting } = this.state
+        const { buildingImageHeight, contactContainer, submitting, confirmationVisible } = this.state
         // const pageHeight = buildingImageHeight + (contactContainer * .72)
         const pageHeight = buildingImageHeight + contactContainer
         return (
@@ -207,8 +221,7 @@ class HomePage extends Component {
                                                 property: "opacity"
                                             }]
                                         }]} >
-                                        <h1>THE PLACE TO LIVE </h1>
-                                        <h1>WHEN YOU'RE GOING PLACES</h1>
+                                        <h1>THE PLACE TO LIVE<br />WHEN YOU'RE GOING PLACES</h1>
                                     </ Plx>
                                 </div>
 
@@ -227,69 +240,71 @@ class HomePage extends Component {
                                                     <br />YOU'RE GOING PLACES</h1>
                                                 </div>
                                                 <div className="contact-form-container" >
+                                                    <p>Introducing Hillrose28, a new ground-up twenty-story residential tower in Manhattan's historic Rose Hill neighborhood, designed by global architectural design firm Lemay + Escobar and executed by Forkosh Development. Located between Lexington and Third Avenues, 181 East 28th Street offers the tranquility of a tree-lined community with central, walkable access to the city's destinations and transit options. Each home interprets the iconic tradition of New York condominium living through a modern lens, from the building's stately Indiana limestone facade to each home's thoughtfully designed spaces. Many of the residences offer expansive outdoor space, an ideal amenity for those looking to make a home in the city, and the city <span className="nobr">their home.</span></p>
 
                                                     <h3>
                                                         <span className="contact-header-text">COMING SOON</span>
-                                                        <br />
-                                                        {/* AT YOUR CONVENIENCE */}
                                                     </h3>
-                                                    <p>
-                                                        Register below for priority information for Hillrose28 at <br />181 East 28th Street. A ground-up full-service luxury condominium.
-                                                </p>
+
+                                                    <p>Join our priority list today to be the first learn of our updates on our studio to penthouse three <span className="nobr">bedroom residences.</span></p>
 
                                                     <Form className="contact-form" id="contact-form" onSubmit={this.handleSubmit}>
                                                         <Row className="input-row" type="flex" justify="end">
                                                             <Form.Item className="name-item first-name">
-                                                                {getFieldDecorator('first-name', {
-                                                                    rules: [
-                                                                        {
-                                                                            required: true,
-                                                                            message: 'Required!'
-                                                                        },
-                                                                    ],
-                                                                })(
-                                                                    <div>
+                                                                <div>
+                                                                    {getFieldDecorator('first_name', {
+                                                                        rules: [
+                                                                            {
+                                                                                required: true,
+                                                                                message: 'Required!'
+                                                                            },
+                                                                        ],
+                                                                    })(
                                                                         <Input />
-                                                                        <p className="input-label">First name*</p>
-                                                                    </div>
-                                                                )}
+                                                                    )}
+
+                                                                    <p className="input-label">First name*</p>
+                                                                </div>
                                                             </Form.Item>
+
                                                             <Form.Item className="name-item last-name">
-                                                                {getFieldDecorator('last-name', {
-                                                                    rules: [
-                                                                        {
-                                                                            required: true,
-                                                                            message: 'Required!',
-                                                                        },
-                                                                    ],
-                                                                })(
-                                                                    <div>
+                                                                <div>
+                                                                    {getFieldDecorator('last_name', {
+                                                                        rules: [
+                                                                            {
+                                                                                required: true,
+                                                                                message: 'Required!',
+                                                                            },
+                                                                        ],
+                                                                    })(
                                                                         <Input />
-                                                                        <p className="input-label">Last name*</p>
-                                                                    </div>
+                                                                    )}
 
-                                                                )}
+                                                                    <p className="input-label">Last name*</p>
+                                                                </div>
                                                             </Form.Item>
+
                                                             <Form.Item className="contact-form-item">
-                                                                {getFieldDecorator('email', {
-                                                                    rules: [
-                                                                        {
-                                                                            type: 'email',
-                                                                            message: 'The input is not valid E-mail!',
-                                                                        },
-                                                                        {
-                                                                            required: true,
-                                                                            message: 'Please input your E-mail!',
-                                                                        },
-                                                                    ],
-                                                                })(
-                                                                    <div>
+                                                                <div>
+                                                                    {getFieldDecorator('email', {
+                                                                        rules: [
+                                                                            {
+                                                                                type: 'email',
+                                                                                message: 'The input is not valid E-mail!',
+                                                                            },
+                                                                            {
+                                                                                required: true,
+                                                                                message: 'Please input your E-mail!',
+                                                                            },
+                                                                        ],
+                                                                    })(
                                                                         <Input />
-                                                                        <p className="input-label">Email*</p>
-                                                                    </div>
+                                                                    )}
 
-                                                                )}
+                                                                    <p className="input-label">Email*</p>
+                                                                </div>
                                                             </Form.Item>
+
                                                             <Form.Item className="contact-form-item broker">
                                                                 {getFieldDecorator('broker')(
                                                                     <Radio.Group>
@@ -299,50 +314,46 @@ class HomePage extends Component {
                                                                     </Radio.Group>,
                                                                 )}
                                                             </Form.Item>
+
                                                             <Form.Item className="contact-form-item">
-                                                                {getFieldDecorator('notes', {
-                                                                })(
-                                                                    <div>
+                                                                <div>
+                                                                    {getFieldDecorator('notes', {
+                                                                    })(
                                                                         <Input />
-                                                                        <p className="input-label">Notes</p>
-                                                                    </div>
+                                                                    )}
 
-                                                                )}
+                                                                    <p className="input-label">Notes</p>
+                                                                </div>
                                                             </Form.Item>
-
                                                         </Row>
-
 
                                                         <Form.Item >
                                                             <Button loading={submitting} className="submit-btn" type="primary" htmlType="submit">
                                                                 {submitting ? "" : "Submit"}
                                                             </Button>
-
                                                         </Form.Item>
-                                                        <Form.Item>
 
-                                                            <img src={Corcoran} alt="" style={{ width: "50%", float: "right" }} />
+                                                        <div className="logos">
+                                                            <img src={Corcoran} className="logo corcoran" alt="Corcoran Sunshine" />
 
+                                                            <img src={Forkosh} className="logo forkosh" alt="Forkosh Development Group" />
+                                                        </div>
 
-                                                        </Form.Item>
-                                                        <p className="terms">This advertisement is not an offering. It is a solicitation of interest in the advertised property. No offering of the advertised units can be made and no deposits can be accepted, or reservations, binding or  non-binding, can be made until an offering plan is filed with the New York State Department of Law. This advertisement is made pursuant to Cooperative Policy Statement #1, issued by the New York State Department of Law.  File No. CP19-0038.  Sponsor: 157-161 East 28th Street LLC, 400 Broome Street, 11th Floor, New York, New York 10013.
+                                                        <p className="terms">This advertisement is not an offering. It is a solicitation of interest in the advertised property. No offering of the advertised units can be made and no deposits can be accepted, or reservations, binding or non-binding, can be made until an offering plan is filed with the New York State Department of Law. This advertisement is made pursuant to Cooperative Policy Statement #1, issued by the New York State Department of Law. File No. CP19-0038. Sponsor: 157-161 East 28th Street LLC, 400 Broome Street, 11th Floor, New York, New York 10013. Images are artist renderings.
                                                         </p>
                                                     </Form>
 
-                                                </div></Col>
+                                                </div>
+                                            </Col>
                                         </Row>
-                                    </div >
-
+                                    </div>
                                 </Row>
                             </div>
                         </Waypoint>
-
                     </div>
-
-
-
                 </div>
 
+                <Modal visible={confirmationVisible} footer={null} closable={false} maskClosable={false}>Thank you for signing up for priority information for Hillrose28</Modal>
             </React.Fragment >
         )
     }

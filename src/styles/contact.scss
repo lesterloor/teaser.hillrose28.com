@@ -7,7 +7,7 @@
 	right: 0;
 	height: 100vh;
 	width: 100%;
-	max-width: 1920px;
+	//max-width: 1920px;
 	margin: 0 auto;
 }
 .form-row-container {
@@ -25,18 +25,16 @@
 	}
 }
 .contact-form-container {
-	padding: 0 2em 2em;
+	padding: 0 1.5em 1.5em;
 	background: #f4f4f4;
 	float: right;
 	bottom: 0;
-	right: 0;
-	height: 72vh;
+    right: 0;
+    width: 50%;
+	//height: 72vh;
 	.ant-form {
-		top: 100px;
-		padding-top: 1.5em;
-		@include responsive {
-		}
-		padding-top: 0em;
+        top: 100px;
+        padding: 0;
 	}
 	.ant-form-item {
 		margin-bottom: 0px !important;
@@ -48,8 +46,8 @@
 	h3 {
 		color: $grey;
 		text-align: right;
-		font-size: 2.85em;
-		margin-bottom: 0px;
+        font-size: 2.85em;
+        margin: 1rem 0;
 		line-height: 1;
 		font-weight: 300;
 		@include responsive {
@@ -71,9 +69,6 @@
 		text-align: right;
 		margin-bottom: 0em;
 		margin-top: 0.1em;
-		@include mobile {
-			font-size: 1em !important;
-		}
 	}
 	.input-label {
 		font-size: 1em;
@@ -106,7 +101,8 @@
 	.ant-radio-wrapper:hover .ant-radio,
 	.ant-radio:hover .ant-radio-inner,
 	.ant-radio-input:focus + .ant-radio-inner {
-		border-color: $red !important;
+        border-color: $grey !important;
+        box-shadow: none;
 	}
 	.broker {
 		margin-top: 10px;
@@ -120,11 +116,18 @@
 			background: $white;
 		}
 	}
-	.ant-radio-checked .ant-radio-inner {
-		border-color: $red;
+	.ant-radio-checked {
+        .ant-radio-inner {
+            border-color: $grey;
+        }
+
+        &::after {
+            animation: none !important;
+            border: none;
+        }
 	}
 	.ant-radio-inner::after {
-		background: $red;
+		background: $grey;
 	}
 	.broker-text {
 		margin-right: 10px;
@@ -133,9 +136,12 @@
 	.input-row .ant-input {
 		border-radius: 0px;
 		background: $white;
-		outline: none !important;
+        outline: none !important;
+        box-shadow: none;
 		border: 0px solid #707070ad;
-		border-bottom: 1px solid #707070ad;
+        border-bottom: 1px solid #707070ad;
+        text-align: right;
+        border-right: none !important;
 		@include mobile {
 			font-size: 1em !important;
 		}
@@ -143,9 +149,9 @@
 	// .ant-nput, textarea, select, a { outline: none !important; }
 
 	.input-row .ant-input:hover {
-		border: 0px solid #d9d9d9;
+		//border: 0px solid #d9d9d9;
 		border-bottom: 1px solid #707070ad;
-		border-right: 0x solid #707070ad;
+		//border-right: 0x solid #707070ad;
 		outline: none !important;
 	}
 	input:focus,
@@ -180,16 +186,20 @@
 		border-radius: 0px;
 		font-size: 1em;
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0) !important;
-		-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0) !important;
-		box-shadow: 0 2px 0 rgba(0, 0, 0, 0) !important;
+		-webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        &::after {
+            animation: none !important;
+        }
 		@include mobile {
 			font-size: 1em !important;
 		}
 	}
 	.submit-btn:hover,
 	.submit-btn:focus {
-		background: $red !important;
-		border-color: $red !important;
+		background: transparent;//$grey !important;
+        border-color: $grey !important;
+        color: $grey;
 	}
 
 	@include responsive {
@@ -198,16 +208,70 @@
 	}
 }
 
+.has-error .ant-input, .has-error .ant-input {
+    &:hover {
+        background-color: transparent !important;
+        //border-right: none !important;
+    }
+
+    &:focus {
+        box-shadow: none !important;
+        //border-right: none !important;
+    }
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.corcoran {
+    margin-right: 0.5em;
+}
+
+.logo {
+    height: calc(50vw * 0.30 * 0.153);
+
+    @include mobile {
+        height: calc(100vw * 0.50 * 0.153);
+    }
+
+    @include tablet {
+        height: calc(100vw * 0.30 * 0.153);
+    }
+
+    @include tablet-landscape {
+        height: calc(75vw * 0.30 * 0.153);
+    }
+}
+
 //responsive
-@include tablet {
+@include tablet-landscape {
 	.contact-form-container {
+        width: 75%;
 	}
 }
+
+@include tablet-portrait {
+    .contact-form-container {
+        h3 {
+            font-size: 2.8em;
+        }
+    }
+}
+
 @include tablet {
 	.terms {
 		font-size: 0.7em !important;
+    }
+    
+    .contact-form-container {
+        padding: 1.5em;
 	}
 }
+
 @include mobile {
 	.ant-form {
 		h3 {
@@ -221,16 +285,23 @@
 		.terms {
 			font-size: 0.7em !important;
 		}
-	}
+    }
+    
 	.form-row-container {
-		height: 100%;
+        height: auto;
+        position: static;
 		padding: 0 0 15px 0;
-	}
+    }
+    
+    .contact-container {
+        margin-top: 0;
+        height: auto;
+    }
 }
 @include desktopSmall {
 	.contact-form-container {
-		height: 507px;
-		width: 479px;
+		//height: 507px;
+		//width: 479px;
 		.ant-form,
 		.ant-radio-group,
 		.ant-form-item {
@@ -246,8 +317,8 @@
 }
 @include desktopMedium {
 	.contact-form-container {
-		height: 550px;
-		width: 560px;
+		//height: 550px;
+		//width: 560px;
 		.ant-form,
 		.ant-radio-group,
 		.ant-form-item {
@@ -263,8 +334,8 @@
 }
 @include desktop {
 	.contact-form-container {
-		height: 602px;
-		width: 636px;
+		//height: 602px;
+		//width: 816px;
 		.ant-form,
 		.ant-radio-group,
 		.ant-form-item {

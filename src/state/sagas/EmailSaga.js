@@ -2,16 +2,21 @@ import { call, put, } from 'redux-saga/effects'
 import * as emailjs from 'emailjs-com';
 import { SET_CONTACT_FORM } from '../actions'
 
-export function* contactForm(action) {
-    console.log("formmmm")
+export function* contactForm (action) {
     try {
         const params = action.payload
+
         const templateParams = {
-            ...params
+            ...params,
+            broker: params.broker ? 'Yes' : 'No'
         }
-        const emailResponse = yield call(emailjs.send, 'gmail', 'contact_email', templateParams, process.env.REACT_APP_EMAILJS_USERID)
+
+        const emailResponse = yield call(emailjs.send, 'amazon_ses', 'auto_response', templateParams, process.env.REACT_APP_EMAILJS_USERID)
+        
+        yield call(emailjs.send, 'amazon_ses', 'contact_email', templateParams, process.env.REACT_APP_EMAILJS_USERID)
+
         const success = emailResponse.text
-        console.log("email response", emailResponse)
+
         yield put({
             type: SET_CONTACT_FORM,
             payload: {

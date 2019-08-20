@@ -21,8 +21,21 @@ $desktop-large: 1601px;
 		@content;
 	}
 }
+
 @mixin tablet {
 	@media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max }) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape {
+	@media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+	@media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) and (orientation: portrait) {
 		@content;
 	}
 }

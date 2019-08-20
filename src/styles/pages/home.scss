@@ -8,7 +8,7 @@
 	background: $white;
 	.hidemobile {
 		@include responsive {
-			display: none;
+			display: none !important;
 		}
 	}
 	.hidedesktop {
@@ -24,7 +24,12 @@
 		}
 	}
 	.form-title {
-		padding: 1em;
+        padding: 1em;
+        
+        @include tablet {
+            padding: 1.5em;
+        }
+
 		h1 {
 			text-align: right;
 			margin-bottom: 0 !important;
@@ -33,19 +38,32 @@
 			font-family: futura-pt, sans-serif;
 			font-weight: 300;
 			font-size: 2em;
-			color: #606060 !important;
+            color: #606060 !important;
+            
+            @include tablet-portrait {
+                font-size: 2.8em;
+            }
 		}
 	}
 	.header-text {
 		position: fixed;
-		max-width: 1920px;
-		width: 100%;
-		top: 30%;
+        right: 0;
+        top: 0;
 		text-align: right;
 		color: white;
-		/* left: 10%; */
-		padding: 2em;
-		z-index: 303;
+        padding-top: 26.9%;
+        width: 60%;
+        z-index: 303;
+        display: flex;
+        pointer-events: none;
+
+        .Plx {
+            width: 100%;
+            transform: translateY(-100%);
+            padding: 4vw;
+            padding-right: 1.5em;
+        }
+        
 		h1 {
 			margin-bottom: 0 !important;
 			line-height: 0.9 !important;
@@ -64,9 +82,13 @@
 		top: 0px;
 		position: fixed;
 		width: 100%;
-		max-width: 1920px;
+		//max-width: 1920px;
 		z-index: 20;
-		background: $white;
+        background: $white;
+        
+        @include mobile {
+            position: static;
+        }
 	}
 	.main-content-relative {
 		height: 100%;
@@ -120,4 +142,12 @@
 }
 .ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) {
 	padding-left: 15px !important;
+}
+
+
+.buildingImageHeight, .video-holder {
+    @include mobile {
+        height: 100vh;
+        object-fit: cover;
+    }
 }
