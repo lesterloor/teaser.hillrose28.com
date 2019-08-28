@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
-import White_logo from "../assets/images/Hillrose_logo-white.png"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Logo from "../assets/images/SVG/logo.svg"
 import ReactSVG from 'react-svg'
 import Plx from 'react-plx';
-import $ from 'jquery';
 import { isMobile, isTablet } from 'react-device-detect';
-
-
-// import $ from 'jquery';
-// import logo from "../assets/images//Hillrose_logo_white.png"
 import "../styles/layout/navigation.scss"
 class HomeNavigation extends Component {
     constructor() {
@@ -19,21 +13,14 @@ class HomeNavigation extends Component {
             menuOpened: false
         }
     }
-    toggleMenu = () => {
-        // var isOpened = $("#burger-2").hasClass("clicked")
-        // isOpened ? helpers.fadeOutNav() : helpers.fadeInNav()
-    }
+
     componentDidMount = () => {
+        console.log("this.props", this.props)
 
     }
-    toggleLogo = () => {
-        console.log("changinf")
-        // $(".cls-2").addClass("logo-red");
-        // $(".cls-1").addClass("logo-white");
 
-    }
     render() {
-
+        console.log("this.props", this.props)
         return (
             <div className="navigation">
                 < Plx
@@ -60,7 +47,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    // toggleGlobalSidebar
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeNavigation)

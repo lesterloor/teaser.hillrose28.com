@@ -5,6 +5,8 @@ $grey: #606060;
 $darkBlue: #332c4b;
 $darkGrey: #787878;
 $phone-min: 320px;
+$phone-max: 414px;
+
 $tablet-min: 768px;
 $tablet-max: 1024px;
 
@@ -17,7 +19,7 @@ $desktop-medium-max: 1600px;
 $desktop-large: 1601px;
 
 @mixin mobile {
-	@media (min-width: #{$phone-min}) and (max-width: #{$tablet-min - 1px}) {
+	@media (min-width: #{$phone-min}) and (max-width: #{$phone-min - 1px}) {
 		@content;
 	}
 }
