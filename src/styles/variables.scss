@@ -19,7 +19,7 @@ $desktop-medium-max: 1600px;
 $desktop-large: 1601px;
 
 @mixin mobile {
-	@media (min-width: #{$phone-min}) and (max-width: #{$phone-min - 1px}) {
+	@media (min-width: #{$phone-min}) and (max-width: #{$tablet-min - 1px}) {
 		@content;
 	}
 }
