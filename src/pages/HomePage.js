@@ -6,8 +6,8 @@ import { Waypoint } from 'react-waypoint';
 import Images from "../components/BuildingFrames"
 import { Form, Input, Radio, Button, Row, Col, Modal } from 'antd';
 import { isMobile, isTablet } from 'react-device-detect';
-import White_logo from "../assets/images/Hillrose_logo-white.png"
-import Red_logo from "../assets/images/Hillrose_logo-red.png"
+// import White_logo from "../assets/images/Hillrose_logo-white.png"
+// import Red_logo from "../assets/images/Hillrose_logo-red.png"
 import Corcoran from "../assets/images/corcoran-logo.png"
 import Forkosh from "../assets/images/fdg.png"
 import Plx from 'react-plx';
@@ -171,7 +171,7 @@ class HomePage extends Component {
             })
 
             clearTimeout(this.confirmationTimeout)
-            
+
             this.confirmationTimeout = setTimeout(() => {
                 this.setState({
                     confirmationVisible: false,
@@ -240,7 +240,7 @@ class HomePage extends Component {
                                                     <br />YOU'RE GOING PLACES</h1>
                                                 </div>
                                                 <div className="contact-form-container" >
-                                                    <p>Introducing Hillrose28, a new ground-up twenty-story residential tower in Manhattan's historic Rose Hill neighborhood, designed by global architectural design firm Lemay + Escobar and executed by Forkosh Development. Located between Lexington and Third Avenues, 181 East 28th Street offers the tranquility of a tree-lined community with central, walkable access to the city's destinations and transit options. Each home interprets the iconic tradition of New York condominium living through a modern lens, from the building's stately Indiana limestone facade to each home's thoughtfully designed spaces. Many of the residences offer expansive outdoor space, an ideal amenity for those looking to make a home in the city, and the city <span className="nobr">their home.</span></p>
+                                                    <p>Introducing Hillrose28, a new ground-up twenty-story residential tower in Manhattan's historic Rose Hill neighborhood. Located between Lexington and Third Avenues, 181 East 28th Street offers the tranquility of a tree-lined community with central, walkable access to the city's destinations and transit options. Each home interprets the iconic tradition of New York condominium living through a modern lens, from the building's stately Indiana limestone facade to each home's thoughtfully designed spaces. Many of the residences offer expansive outdoor space, an ideal amenity for those looking to make a home in the city, and the city<span className="nobr">their home.</span></p>
 
                                                     <h3>
                                                         <span className="contact-header-text">COMING SOON</span>

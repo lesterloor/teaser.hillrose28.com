@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import Logo from "../assets/images/SVG/logo.svg"
 import ReactSVG from 'react-svg'
 import Plx from 'react-plx';
-import { isMobile, isTablet } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 import "../styles/layout/navigation.scss"
 class HomeNavigation extends Component {
     constructor() {

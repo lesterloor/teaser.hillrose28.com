@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Context from '../Context'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import MainAppContainer from '../containers/MainAppContainer'
 import HomePage from '../pages/HomePage'
-import LoginPage from '../pages/LoginPage'
+// import LoginPage from '../pages/LoginPage'
 
 class Routing extends Component {
     constructor() {
